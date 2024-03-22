@@ -2,32 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 1440px;
+  height: 1482px;
+  top: -1006px;
+  left: -1602px;
+  gap: 0px;
+  opacity: 0px;
+  background: #fdfdfd;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.sidebar {
+  padding: 16px 16px 32px 16px;
+  gap: 57px;
+  border-radius: 0px 8px 8px 0px;
+  border: 0px 1px 0px 0px;
+  opacity: 0px;
+}
+
+.logo {
+  width: 36px;
+  height: 406px;
+  padding: 5px 0px 5px 5px;
+  gap: 16px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings {
+  width: 36px;
+  height: 94px;
+  padding: 5px 0px 5px 5px;
+  gap: 24px;
+  opacity: 0px;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 1328px;
+  height: 85px;
+  left: 96px;
+  padding: 16px 32px 16px 32px;
+  gap: 669px;
+  border-radius: 0px 0px 24px 24px;
+  border: 0px 0px 1px 0px;
+  opacity: 0px;
+  background: #ffffff;
+  /* border: 2px solid black; */
+}
+
+.header-right {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  width: 349px;
+  height: 38px;
+  gap: 32px;
+  opacity: 0px;
+  color: black;
+}
+
+.search {
+  display: flex;
+  width: 1328px;
+  height: 68px;
+  top: 101px;
+  left: 96px;
+  padding: 16px 32px 16px 0px;
+  gap: 36px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
 }
