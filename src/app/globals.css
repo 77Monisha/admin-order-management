@@ -10,6 +10,7 @@ body {
   gap: 0px;
   opacity: 0px;
   background: #fdfdfd;
+  color: #333333;
 }
 
 .sidebar {
@@ -24,10 +25,11 @@ body {
   width: 36px;
   height: 406px;
   padding: 5px 0px 5px 5px;
-  gap: 16px;
+  gap: 8px;
   opacity: 0px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .settings {
@@ -37,6 +39,7 @@ body {
   gap: 24px;
   opacity: 0px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .header {
@@ -52,11 +55,23 @@ body {
   border: 0px 0px 1px 0px;
   opacity: 0px;
   background: #ffffff;
-  /* border: 2px solid black; */
+}
+
+.header-left {
+  width: 246px;
+  height: 53px;
+  gap: 16px;
+}
+
+.all_orders {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
 }
 
 .header-right {
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   border-radius: 10px;
   width: 349px;
@@ -68,7 +83,7 @@ body {
 
 .search {
   display: flex;
-  width: 1328px;
+  width: 1360px;
   height: 68px;
   top: 101px;
   left: 96px;
@@ -76,4 +91,343 @@ body {
   gap: 36px;
   border-radius: 8px 0px 0px 0px;
   opacity: 0px;
+}
+
+.search_box {
+  width: 951px;
+  height: 36px;
+  opacity: 0px;
+}
+
+.options {
+  width: 575px;
+  height: 36px;
+  gap: 21px;
+  opacity: 0px;
+  margin-right: 20px;
+}
+
+.options button {
+  border: 2px solid rgb(209 213 219);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.orderlist {
+  width: 994px;
+  height: 1182px;
+  top: 185px;
+  left: 96px;
+  gap: 16px;
+  opacity: 0px;
+}
+
+.order_items {
+  width: 960px;
+  height: 22px;
+  padding: 0px 16px 0px 32px;
+  gap: 8px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.single_header {
+  width: 72px;
+  height: 22px;
+  gap: 4px;
+  display: flex;
+  flex-direction: row;
+}
+
+.item_name {
+  height: 22px;
+  width: 70px;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 21.95px;
+  letter-spacing: 0.01em;
+  text-wrap: nowrap;
+}
+
+.order_table {
+  width: 992px;
+  height: 1056px;
+  padding: 16px 22px 16px 32px;
+  gap: 16px;
+  border-radius: 16px 0px 0px 0px;
+  border: 2px 0px 0px 0px;
+  opacity: 0px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  margin-right: 40px;
+}
+
+.table {
+  width: 938px;
+  height: 1024px;
+  gap: 16px;
+}
+
+.table_heading {
+  padding: 12px;
+  color: #377dff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.075em;
+  text-align: left;
+  gap: 8px;
+}
+
+.table_body {
+  padding: 12px;
+  padding-bottom: 40px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-right: 16px;
+  color: #333333;
+}
+
+.status_button {
+  height: 28px;
+  border-radius: 28px;
+  border: 1px solid #53a450;
+  padding: 5px 11px 5px 11px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}
+
+/* Specific colors for each status */
+.status_success {
+  color: #53a450;
+  border-color: #53a450;
+}
+
+.status_failure {
+  color: #f04a4a;
+  border-color: #f04a4a;
+}
+
+.status_pending {
+  color: #f5d540;
+  border-color: #f5d540;
+}
+
+.status_sent {
+  color: #e5a530;
+  border-color: #e5a530;
+}
+
+.status_refund_initiated {
+  color: #854cc5;
+  border-color: #854cc5;
+}
+
+.status_refund_completed {
+  color: #e54095;
+  border-color: #e54095;
+}
+
+.pagination {
+  width: 992px;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid rgb(204, 202, 202); */
+  color: #454545;
+}
+
+.current_page {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-wrap: nowrap;
+}
+
+.rows_page {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.filter {
+  width: 320px;
+  height: 427px;
+  top: 185px;
+  left: 1104px;
+  padding: 16px 32px 16px 32px;
+  gap: 252px;
+  border-radius: 24px 0px 0px 0px;
+  opacity: 0px;
+  margin-left: 40px;
+  border: 2px solid gray;
+}
+
+.filter_box {
+  width: 256px;
+  height: 395px;
+  gap: 16px;
+  display: contents;
+}
+
+.filter_heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.075em;
+  color: #5d6679;
+}
+
+.filter_settings {
+  width: 247px;
+  height: 44px;
+  gap: 32px;
+  padding: 0px 0px 8px 0px;
+  margin-top: 8px;
+  background-color: white;
+}
+
+.filter_settings .border {
+  width: 117px;
+  height: 36px;
+  border: 1px solid #adb5bd;
+  padding: 1px 18px 1px 18px;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #5d6679;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.border_clear {
+  border: none !important;
+  text-decoration: underline;
+}
+
+.order_recepit {
+  width: 1238px;
+  height: 600px;
+  top: 185px;
+  left: 141px;
+  gap: 37px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.order_bill {
+  width: 400px;
+  height: 676.45px;
+  gap: 10px;
+  opacity: 0px;
+  margin-left: 20px;
+  border-radius: 16px;
+  padding: 10px;
+  display: flex;
+  border: 2px solid;
+  flex-direction: column;
+  border: 2px solid rgb(209 213 219);
+}
+
+.order_headings {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.25px;
+  text-align: left;
+  color: #868e96;
+}
+
+.info_head {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.6px;
+  text-align: left;
+  color: #868e96;
+}
+
+.info_data {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #333333;
+}
+
+.order_chart {
+  width: 905px;
+  gap: 32px;
+  background-color: #ffffff;
+  opacity: 0px;
+  height: 450px;
+  border: 2px solid rgb(209 213 219);
+  border-radius: 16px;
+}
+
+.chart {
+  border-radius: 16px;
+  width: 800.14px;
+  height: 430px;
+  padding: 0px 0px 20px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.chart_header {
+  margin-top: 28px;
+  margin-left: 45px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1px;
+  letter-spacing: 0.25px;
+  text-align: left;
+  color: #5d6679;
+}
+
+.order_table {
+  width: 776.14px;
+  height: 320px;
+  gap: 16px;
+  opacity: 0px;
+  margin-top: 14px;
+}
+
+.action_button {
+  height: 36px;
+  width: 83px;
+  border-radius: 4px;
+  background-color: #377dff;
+  color: white;
+  font-size: 14px;
+}
+
+.chart_layout {
+  width: 776.14px;
+  height: 320px;
+  gap: 20px;
+  opacity: 0px;
+}
+
+.refund_button {
+  margin-left: 980px;
+  margin-top: -55px;
+  margin-bottom: 50px;
+}
+
+.refund_button button {
+  background-color: #377dff;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
 }

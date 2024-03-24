@@ -1,0 +1,42 @@
+[
+  {
+    "id": "D101",
+    "drinkName": "Cappuccino",
+    "customization": "Low Honey",
+    "amount": 150,
+    "drinkStatus": "success",
+    "action": "Refund"
+  },
+  {
+    "id": "D102",
+    "drinkName": "Latte",
+    "customization": "Extra syrup",
+    "amount": 180,
+    "drinkStatus": "Refund_Completed",
+    "action": "Refund"
+  },
+  {
+    "id": "D103",
+    "drinkName": "Espresso",
+    "customization": "None",
+    "amount": 120,
+    "drinkStatus": "success",
+    "action": "Refund"
+  },
+  {
+    "id": "D104",
+    "drinkName": "Mocha",
+    "customization": "Whipped cream",
+    "amount": 200,
+    "drinkStatus": "success",
+    "action": "Refund"
+  },
+  {
+    "id": "D105",
+    "drinkName": "Macchiato",
+    "customization": "Caramel drizzle",
+    "amount": 160,
+    "drinkStatus": "Success",
+    "action": "Refund"
+  }
+]
