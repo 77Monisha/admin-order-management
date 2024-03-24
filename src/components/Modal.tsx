@@ -1,122 +1,181 @@
-"use client";
 import { useState } from "react";
 import orderData from "../utilis/data.json";
 
-const Modal = ({ closeModal }: { closeModal: any }) => {
-  const machines = Array.from(new Set(orderData.map((order) => order.machine)));
-  const [search, setSearch] = useState("");
+const Modal = ({
+  closeModal,
+  onApplyFilters,
+}: {
+  closeModal: any;
+  onApplyFilters: any;
+}) => {
+  const [selectedStatus, setSelectedStatus] = useState("");
   const [selectedMachines, setSelectedMachines] = useState<string[]>([]);
-  const [status, setStatus] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
   const handleApplyFilters = () => {
-    // Logic to apply filters
-    console.log("Search:", search);
-    console.log("Selected Machines:", selectedMachines);
-    console.log("Status:", status);
-    console.log("Start Date:", startDate);
-    console.log("End Date:", endDate);
+    // Pass the selected values to the parent component
+    onApplyFilters({ selectedMachines, selectedStatus, startDate, endDate });
     closeModal();
   };
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none ">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
       <div className="fixed inset-0 bg-black opacity-70"></div>
 
       <div className="relative w-[890px] max-w-lg mx-auto my-6">
         <div className="relative flex flex-col bg-white border-2 border-gray-300 rounded-3xl shadow-lg outline-none focus:outline-none">
           <div className="flex items-center justify-center p-5 border-b border-solid border-gray-300 rounded-t">
-            <h3 className="text-xl font-semibold ">Filter Orders</h3>
+            <h3 className="text-xl font-semibold ml-[200px]">FILTER</h3>
             <button
-              className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+              className="p-1 ml-auto bg-transparent border-0 text-[#D92D20] opacity-100 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
               onClick={closeModal}
             >
-              <span className="text-black">X</span>
+              <span>X</span>
             </button>
           </div>
 
-          <div className="relative p-6 flex-auto">
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full border rounded-xl py-2 px-3 mb-3"
-            />
-            <div className="mb-4">
-              <p className="font-semibold mb-2">Select Machines:</p>
-              {machines.map((machine, index) => (
-                <label key={index} className="inline-flex items-center">
+          <div className="relative p-10 flex-auto w-full text-[14px] text-[#333333] ">
+            <div className="w-[400px]">
+              <input
+                type="text"
+                placeholder="Search"
+                className="filter-filter border-2 rounded-xl py-4 px-4 mb-8 text-[#377dff]"
+              />
+            </div>
+            <div className="mb-8 space-y-8 space-x-4 border-2 border-gray-300 rounded-xl p-4">
+              <p className="font-semibold mb-2 text-[#377dff] ">
+                Machines Names:
+              </p>
+              <div className="flex flex-col space-y-4">
+                <label className="inline-flex ">
                   <input
                     type="checkbox"
                     className="form-checkbox text-indigo-500"
                   />
-                  <span className="ml-2">{machine}</span>
+                  <span className="ml-2">"Aahaar Stall 3", "WH01"</span>
                 </label>
-              ))}
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox text-indigo-500"
+                  />
+                  <span className="ml-2">"Aahaar Stall 5", "WH03"</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox text-indigo-500"
+                  />
+                  <span className="ml-2">"Aahaar Stall 2", "WH03"</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox text-indigo-500"
+                  />
+                  <span className="ml-2">"Aahaar Stall 4", "WH01"</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox text-indigo-500"
+                  />
+                  <span className="ml-2">"Aahaar Stall 5", "WH02"</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox text-indigo-500"
+                  />
+                  <span className="ml-2">"Aahaar Stall 3", "WH04"</span>
+                </label>
+              </div>
             </div>
 
-            <div className="mb-4 space-y-2 space-x-2 ">
-              <p className="font-semibold mb-2">Select Status:</p>
-              <label className="inline-flex items-center">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="success"
-                />
-                <span className="ml-2">Success</span>
-              </label>
-              <label className="inline-flex items-center ml-6">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="pending"
-                />
-                <span className="ml-2">Pending</span>
-              </label>
-              <label className="inline-flex items-center ml-6">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="failed"
-                />
-                <span className="ml-2">Failed</span>
-              </label>
-              <label className="inline-flex items-center ml-6">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="failed"
-                />
-                <span className="ml-2">Sent</span>
-              </label>
-              <label className="inline-flex items-center ml-6">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="failed"
-                />
-                <span className="ml-2">Refund Completed</span>
-              </label>
-              <label className="inline-flex items-center ml-6">
-                <input
-                  type="radio"
-                  className="form-radio text-indigo-500"
-                  name="status"
-                  value="failed"
-                />
-                <span className="ml-2">Refund Initiated</span>
-              </label>
+            <div className="mb-4 space-y-2 space-x-2 border-2 border-gray-300 rounded-xl p-4">
+              <p className="font-semibold mb-2 text-[#377dff]">
+                Select Status:
+              </p>
+              <div className="flex flex-row space-x-6 flex-wrap space-y-2">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="success"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Success</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="success"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Pending</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="Pending"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Sent</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="Sent"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Failure</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="Failure"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Refund Completed</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio text-indigo-500"
+                    name="status"
+                    value="Refund Completed"
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                  />
+                  <span className="ml-2">Refund Initiated</span>
+                </label>
+              </div>
             </div>
-            <div className="mb-4">
-              <p className="font-semibold mb-2">Select Date Range:</p>
-              <input type="date" className="border rounded py-2 px-3 mr-2" />
-              <span className="mr-2">to</span>
-              <input type="date" className="border rounded py-2 px-3" />
+            <div className="mb-4 border-2 border-gray-300 rounded-xl p-4">
+              <p className="font-semibold mb-2 text-[rgb(55,125,255)] p-2">
+                Select Date Range:
+              </p>
+              <div className="flex flex-row justify-center ic">
+                <input
+                  type="date"
+                  className="border rounded py-2 px-6 mr-2"
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+                <span className="m-4 mt-2">to</span>
+                <input
+                  type="date"
+                  className="border rounded py-2 px-6 mr-4"
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
             </div>
           </div>
           <div className="flex items-center justify-between p-2 border-t border-solid border-gray-300 rounded-b">
